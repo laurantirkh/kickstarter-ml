@@ -1,16 +1,56 @@
-# ds-modeling-pipeline
-Skeleton project for building a simple model in python script
-This is the simplest way to do it. We train a simple model in the jupyter notebook, where we select only some features and do minimal cleaning. The output is then stored in simple python scripts.
+# Machine Learning Project: Kickstarter
+This repository contains the jupyter notebooks for the machine learning project looking at the kickstarter dataset 
 
-Data used is the  [coffee quality dataset](https://github.com/jldbc/coffee-quality-database).
+Data used is the kickstarter project dataset (not uploaded on github)
 
-##
-Requirements:
-- pyenv with Python: 3.8.5
+---
+## __Files__
 
-### Environment
+### __Preprocessing.ipynb__
 
-Same procedure as last time...
+Contains the preprocessing steps:
+- loading the data and discarding the columns that won't be used
+- check for missing values and exclude outliers
+- feature engineering: creating new columns based on existing ones
+- save the preprocessed data 
+- apply a dummy classifier to the data
+
+Note: this notebook uses a csv file of the combined dataset, not the individual csv files for kickstarter_000.csv to kickstarter_055.csv
+
+### __EDA1_profiling.ipynb__
+
+The pandas profiling report for the dataset.
+
+### __eda_plots.ipynb__
+
+The plots for the exploratoy data analysis.
+
+### __naive_bayes.ipynb__
+
+Trains a Naive Bayes Classifier on part of the dataset (train data) and evaluates it on the rest of the dataset (test data).
+
+### __log_reg.ipynb__
+
+Trains a Logistic Regression Classifier on part of the dataset (train data) and evaluates it on the rest of the dataset (test data).
+
+### __randomforest_model.ipynb__
+
+Trains the following classifiers on part of the dataset (train data) and evaluates them on the rest of the dataset (test data):
+- a simple decision tree
+- a support vector machine
+- a random forest
+
+### __logreg_model.sav__
+
+The best logistic regression classifier as determined by the gridsearch in log_reg.ipynb
+
+### __requirements.txt__
+
+Contains the list of libraries needed for the notebooks.
+
+---
+
+## __Environment__
 
 Use the requirements file in this repo to create a new environment.
 
@@ -19,29 +59,8 @@ make setup
 
 #or 
 
-pyenv local 3.8.5
+pyenv local 3.9.4
 python -m venv .venv
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
-## Usage
-
-In order to train the model and store test data in the data folder and the model in models run:
-
-```bash
-#activate env
-source .venv/bin/activate
-
-python train.py  
-```
-
-In order to test that predict works on a test set you created run:
-
-```bash
-python predict.py models/linear_regression_model.sav data/X_test.csv data/y_test.csv
-```
-
-## Limitations
-
-development libraries are part of the production environment, normally these would be separate as the production code should be as slim as possible
