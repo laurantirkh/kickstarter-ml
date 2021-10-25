@@ -48,6 +48,19 @@ The best logistic regression classifier as determined by the gridsearch in log_r
 
 Contains the list of libraries needed for the notebooks.
 
+### preprocessing.py
+
+Takes a dataset (specified inside the script) and goes through the preprocessing steps in preprocessing.ipynp
+Saves 3 different preprocessed files:
+- preprocessed data with raw goal in usd
+- preprocessed data with log transformed goal in usd
+- preprocessed data with categories und countries encoded as dummy variables
+
+### model.py
+
+Takes the preprocessed data with dummy variables (specified inside the script), splits it into train and test datasets, trains a random forest model on the train dataset.
+Then makes predictions on the test dataset and evaluates them with a classification report and a confusion matrix.
+
 ---
 
 ## __Environment__
@@ -55,12 +68,9 @@ Contains the list of libraries needed for the notebooks.
 Use the requirements file in this repo to create a new environment.
 
 ```BASH
-make setup 
-
-#or 
-
 pyenv local 3.9.4
 python -m venv .venv
+source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
