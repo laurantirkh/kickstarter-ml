@@ -1,6 +1,6 @@
 # Machine Learning Project: Kickstarter
 
-<img src="../slides/kickstarter_project_cover.png"></img>
+<img src="../slides/kickstarter_project_cover.png"/>
 
 This repository contains the jupyter notebooks for the machine learning project looking at the kickstarter dataset 
 
