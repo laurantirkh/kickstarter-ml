@@ -20,7 +20,7 @@ Contains the preprocessing steps:
 
 Note: this notebook uses a csv file of the combined dataset, not the individual csv files for kickstarter_000.csv to kickstarter_055.csv
 
-### __EDA1_profiling.ipynb__
+### __eda_profiling.ipynb__
 
 The pandas profiling report for the dataset.
 
